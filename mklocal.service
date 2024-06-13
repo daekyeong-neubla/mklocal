@@ -1,0 +1,11 @@
+[Unit]
+Description=Setup and mount /dev/nvme0n* to /local
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=mklocal.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
